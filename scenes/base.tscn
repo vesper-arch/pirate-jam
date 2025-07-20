@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c6h2hfsegx6d4"]
 
-[ext_resource type="Script" uid="uid://tygcb54wt73u" path="res://character_controller.gd" id="1_rpg24"]
+[ext_resource type="Script" uid="uid://pq7eux4nukhc" path="res://scripts/player_controller.gd" id="1_pvqg0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3vi8l"]
 
@@ -15,7 +15,7 @@ size = Vector2(20, 20)
 position = Vector2(538, 358)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_rpg24")
+script = ExtResource("1_pvqg0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_3vi8l")
