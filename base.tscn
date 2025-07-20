@@ -1,3 +1,36 @@
-[gd_scene format=3 uid="uid://c6h2hfsegx6d4"]
+[gd_scene load_steps=6 format=3 uid="uid://c6h2hfsegx6d4"]
+
+[ext_resource type="Script" uid="uid://tygcb54wt73u" path="res://character_controller.gd" id="1_rpg24"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vi8l"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_8rhti"]
+size = Vector2(20, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohhpf"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_21bcp"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(538, 358)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_rpg24")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_3vi8l")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CharacterBody2D"]
+mesh = SubResource("QuadMesh_8rhti")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 53.89)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(79.265, 1.555)
+shape = SubResource("RectangleShape2D_ohhpf")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+position = Vector2(-6.00001, 0.24)
+scale = Vector2(1600, 31.235)
+mesh = SubResource("QuadMesh_21bcp")
