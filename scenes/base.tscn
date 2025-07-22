@@ -1,36 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6h2hfsegx6d4"]
+[gd_scene load_steps=3 format=3 uid="uid://c6h2hfsegx6d4"]
 
-[ext_resource type="Script" uid="uid://pq7eux4nukhc" path="res://scripts/player_controller.gd" id="1_pvqg0"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3vi8l"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_8rhti"]
-size = Vector2(20, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ohhpf"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_21bcp"]
+[ext_resource type="PackedScene" uid="uid://c6pxxlm40yuk1" path="res://scenes/player.tscn" id="1_pvqg0"]
+[ext_resource type="PackedScene" uid="uid://duvqw7gb4h5ai" path="res://scenes/platform.tscn" id="2_baglu"]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(538, 358)
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_pvqg0")
+[node name="Player" parent="." instance=ExtResource("1_pvqg0")]
+position = Vector2(0, 19)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-shape = SubResource("RectangleShape2D_3vi8l")
+[node name="Camera2D" type="Camera2D" parent="Player"]
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="CharacterBody2D"]
-mesh = SubResource("QuadMesh_8rhti")
+[node name="Platform" parent="." instance=ExtResource("2_baglu")]
+position = Vector2(57, 64)
+scale = Vector2(2.23272, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, 53.89)
+[node name="Platform2" parent="." instance=ExtResource("2_baglu")]
+position = Vector2(478, -26)
+scale = Vector2(0.400001, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-scale = Vector2(79.265, 1.555)
-shape = SubResource("RectangleShape2D_ohhpf")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
-position = Vector2(-6.00001, 0.24)
-scale = Vector2(1600, 31.235)
-mesh = SubResource("QuadMesh_21bcp")
+[node name="Platform3" parent="." instance=ExtResource("2_baglu")]
+position = Vector2(-140, -84)
+scale = Vector2(0.160001, 1)
