@@ -1,15 +1,10 @@
-extends CharacterBody2D
+extends Area2D
 
-@export var SPEED = 100
+@export var speed = 600
+var velocity = Vector2.RIGHT
 
-var direction: float
-var spawn_position: Vector2
-var spawn_rotation: float
+func _physics_process(delta):
+	position += speed * velocity * delta
 
-func _ready() -> void:
-	global_position = spawn_position
-	global_rotation = spawn_rotation
-	
-func _physics_process(delta: float) -> void:
-	velocity = Vector2(0, -SPEED).rotated(direction)
-	move_and_slide()
+func _on_body_entered(body: Node2D) -> void:
+	queue_free()

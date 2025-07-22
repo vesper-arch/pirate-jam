@@ -7,7 +7,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_softn"]
 radius = 5.0
 
-[node name="Projectile" type="CharacterBody2D"]
+[node name="Projectile" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_c8fcr")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
@@ -16,3 +18,5 @@ mesh = SubResource("SphereMesh_q3m7n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_softn")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

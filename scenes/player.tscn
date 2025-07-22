@@ -15,3 +15,5 @@ shape = SubResource("RectangleShape2D_g2els")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 mesh = SubResource("QuadMesh_qhqgy")
+
+[connection signal="shoot" from="." to="." method="_on_shoot"]
