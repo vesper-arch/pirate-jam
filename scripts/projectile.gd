@@ -6,5 +6,5 @@ var velocity = Vector2.RIGHT
 func _physics_process(delta):
 	position += speed * velocity * delta
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	queue_free()
