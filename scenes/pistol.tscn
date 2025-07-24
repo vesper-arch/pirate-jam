@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://eb0yjjch8wnj"]
+
+[ext_resource type="Script" uid="uid://c64pppknbjjuu" path="res://scripts/weapon.gd" id="1_uxn4k"]
+[ext_resource type="Texture2D" uid="uid://bpof4jetd2ccg" path="res://assets/pistol.png" id="1_xasec"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xasec"]
+size = Vector2(25, 15)
+
+[node name="Pistol" type="Area2D"]
+script = ExtResource("1_uxn4k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(14, 0)
+texture = ExtResource("1_xasec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14, 0)
+shape = SubResource("RectangleShape2D_xasec")
+
+[node name="ShootPoint" type="Node2D" parent="."]
+position = Vector2(28, -5)

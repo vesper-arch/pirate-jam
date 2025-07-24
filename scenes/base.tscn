@@ -1,16 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6h2hfsegx6d4"]
+[gd_scene load_steps=4 format=3 uid="uid://c6h2hfsegx6d4"]
 
 [ext_resource type="PackedScene" uid="uid://c6pxxlm40yuk1" path="res://scenes/player.tscn" id="1_pvqg0"]
 [ext_resource type="PackedScene" uid="uid://duvqw7gb4h5ai" path="res://scenes/platform.tscn" id="2_baglu"]
+[ext_resource type="PackedScene" uid="uid://eb0yjjch8wnj" path="res://scenes/pistol.tscn" id="2_t45w4"]
 
 [node name="Root" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_pvqg0")]
 position = Vector2(0, 19)
-WEAPON_COOLDOWN = 2.0
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
+
+[node name="Pistol" parent="Player" instance=ExtResource("2_t45w4")]
 
 [node name="Platform" parent="." instance=ExtResource("2_baglu")]
 position = Vector2(57, 64)

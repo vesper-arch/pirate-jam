@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var SPEED = 250.0
 @export var JUMP_VELOCITY = -450.0
-@export var WEAPON_COOLDOWN = 2.0
+@export var WEAPON_COOLDOWN = 1.0
 
 signal shoot(bullet, direction, location)
 
@@ -38,9 +38,10 @@ func _input(event: InputEvent) -> void:
 func _on_shoot(_bullet: Variant, direction: Variant, location: Variant) -> void:
 	var spawned_projectile = Projectile.instantiate()
 	var mouse_direction = get_local_mouse_position().angle()
+	var Weapon_Shootpoint = get_node("Pistol/ShootPoint")
 	owner.add_child(spawned_projectile)
-	spawned_projectile.rotation = direction
-	spawned_projectile.position = location
+	spawned_projectile.rotation = mouse_direction
+	spawned_projectile.position = Weapon_Shootpoint.global_position
 	spawned_projectile.velocity = spawned_projectile.velocity.rotated(mouse_direction)
 
 
